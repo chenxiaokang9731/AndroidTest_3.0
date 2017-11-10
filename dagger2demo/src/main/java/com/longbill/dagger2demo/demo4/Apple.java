@@ -9,13 +9,13 @@ import javax.inject.Inject;
 /**
  * Created by Administrator on 2017/11/10.
  */
-
+//http://blog.csdn.net/android_study_ok/article/details/52430576
 public class Apple {
     @Inject
     Knife knife;
 
     public Apple() {
-        Log.e("knife", "苹果里的knife内存地址：" + knife.toString());
         MyApp.getKnifeComponent().inject(this);
+        Log.e("knife", "苹果里的knife内存地址：" + knife.toString());
     }
 }

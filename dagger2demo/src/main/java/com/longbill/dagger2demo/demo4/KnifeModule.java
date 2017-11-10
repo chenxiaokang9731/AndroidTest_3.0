@@ -17,5 +17,4 @@ public class KnifeModule {
         Knife knife = new Knife();
         return knife;
     }
-
 }
