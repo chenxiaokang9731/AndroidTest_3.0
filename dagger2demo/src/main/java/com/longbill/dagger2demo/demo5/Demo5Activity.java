@@ -20,5 +20,8 @@ public class Demo5Activity extends AppCompatActivity {
 
         DaggerUserComponent.builder().build().inject(this);
         Toast.makeText(this, user.toString(), Toast.LENGTH_SHORT).show();
+
+
+        System.out.println("版本1");
     }
 }
