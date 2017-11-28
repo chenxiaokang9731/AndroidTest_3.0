@@ -1,0 +1,40 @@
+ext{
+    android = [
+            compileSdkVersion:26,
+            applicationId:"com.narkang.mvpdemo",
+            minSdkVersion: 15,
+            targetSdkVersion: 26,
+            versionCode: 1,
+            versionName: "1.0",
+    ]
+
+    def depVersion = [
+            spportVersion           :"26.1.0",
+            butterknife             :"8.8.1",
+            rxjava                  :"2.1.5",
+            rxandroid               :"2.0.1",
+            retrofit                :"2.3.0",
+            logging_interceptor     :"3.8.1",
+    ]
+
+    dependencies = [
+
+            "appcompat-v7"          :"com.android.support:appcompat-v7:${depVersion.spportVersion}",
+            "recyclerview-v7"       :"com.android.support:recyclerview-v7:${depVersion.spportVersion}",
+            "constraint-layout"     :"com.android.support.constraint:constraint-layout:1.0.2",
+
+            "junit"                 :"junit:junit:4.12",
+            "runner"                :"com.android.support.test:runner:1.0.1",
+            "espresso-core"         :"com.android.support.test.espresso:espresso-core:3.0.1",
+
+            "butterknife"           :"com.jakewharton:butterknife:${depVersion.butterknife}",
+            "butterknife-compiler"  :"com.jakewharton:butterknife-compiler:${depVersion.butterknife}",
+
+            "rxjava"                :"io.reactivex.rxjava2:rxjava:${depVersion.rxjava}",
+            "rxandroid"             :"io.reactivex.rxjava2:rxandroid:${depVersion.rxandroid}",
+            "retrofit"              :"com.squareup.retrofit2:retrofit:${depVersion.retrofit}",
+            "converter-gson"        :"com.squareup.retrofit2:converter-gson:${depVersion.retrofit}",
+            "adapter-rxjava2"       :"com.squareup.retrofit2:adapter-rxjava2:${depVersion.retrofit}",
+            "logging-interceptor"   :"com.squareup.okhttp3:logging-interceptor:${depVersion.logging_interceptor}"
+    ]
+}
