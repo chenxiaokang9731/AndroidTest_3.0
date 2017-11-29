@@ -17,11 +17,12 @@ public abstract class BaseMVPActivity<P extends BasePresenter, M extends BaseMod
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
         mPresenter = TUtil.getT(this, 0);
         mModel = TUtil.getT(this, 1);
         mPresenter.attachVM(this, mModel);
+
+        super.onCreate(savedInstanceState);
     }
 
     @Override

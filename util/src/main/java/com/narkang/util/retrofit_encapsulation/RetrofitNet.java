@@ -24,7 +24,7 @@ public class RetrofitNet {
             HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
                 @Override
                 public void log(String message) {
-                    Log.i("RetrofitNet", message);
+                    Log.e("RetrofitNet", message);
                 }
             }).setLevel(HttpLoggingInterceptor.Level.BODY);
 
