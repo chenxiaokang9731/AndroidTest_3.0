@@ -8,8 +8,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+
+import com.narkang.util.recyclerview.NarRecyclerViewAdapter;
+import com.narkang.util.recyclerview.NarViewHolder;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -39,11 +43,21 @@ public class GalleryView extends RecyclerView{
 
     public GalleryView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+        init(context);
+    }
+
+    private void init(Context context){
+        setLayoutManager(new GridLayoutManager(context, 4));
     }
 
     public void setUp(LoaderManager loaderManager, SelectedChangeListener listener){
         this.mListener = listener;
         loaderManager.initLoader(LOADER_ID, null, mLoaderCallback);
+    }
+
+    @Override
+    protected void onMeasure(int widthSpec, int heightSpec) {
+        super.onMeasure(widthSpec, widthSpec);
     }
 
     private class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor>{
@@ -141,6 +155,13 @@ public class GalleryView extends RecyclerView{
         @Override
         public int hashCode() {
             return path != null ? path.hashCode() : 0;
+        }
+    }
+
+    private class Adapter extends NarRecyclerViewAdapter<Image>{
+        @Override
+        public void bindView(NarViewHolder viewHolder, Image image) {
+
         }
     }
 
