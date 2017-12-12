@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidTest_3.0.iml" filepath="$PROJECT_DIR$/AndroidTest_3.0.iml" />
+      <module fileurl="file://$PROJECT_DIR$/androidloaddemo/androidloaddemo.iml" filepath="$PROJECT_DIR$/androidloaddemo/androidloaddemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dagger2demo/dagger2demo.iml" filepath="$PROJECT_DIR$/dagger2demo/dagger2demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mvpdemo/mvpdemo.iml" filepath="$PROJECT_DIR$/mvpdemo/mvpdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/util/util.iml" filepath="$PROJECT_DIR$/util/util.iml" />
+    </modules>
+  </component>
+</project>
