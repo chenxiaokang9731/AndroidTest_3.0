@@ -70,4 +70,9 @@ public abstract class NarRecyclerViewAdapter<Data> extends RecyclerView.Adapter<
     public void setOnItemChildClickListener(OnItemChildClickListener listener){
         this.mListener = listener;
     }
+
+    public void resetAdapter(){
+        mDataList.clear();
+        notifyDataSetChanged();
+    }
 }

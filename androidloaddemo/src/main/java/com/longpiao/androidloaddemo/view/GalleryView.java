@@ -12,6 +12,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.longpiao.androidloaddemo.R;
 import com.narkang.util.recyclerview.NarRecyclerViewAdapter;
 import com.narkang.util.recyclerview.NarViewHolder;
 
@@ -22,7 +25,6 @@ import java.util.List;
 /**
  * Created by chenxk on 2017/12/12.
  */
-
 public class GalleryView extends RecyclerView{
 
     private static final int LOADER_ID = 0x0100;
@@ -48,16 +50,12 @@ public class GalleryView extends RecyclerView{
 
     private void init(Context context){
         setLayoutManager(new GridLayoutManager(context, 4));
+        setAdapter(adapter);
     }
 
     public void setUp(LoaderManager loaderManager, SelectedChangeListener listener){
         this.mListener = listener;
         loaderManager.initLoader(LOADER_ID, null, mLoaderCallback);
-    }
-
-    @Override
-    protected void onMeasure(int widthSpec, int heightSpec) {
-        super.onMeasure(widthSpec, widthSpec);
     }
 
     private class LoaderCallback implements LoaderManager.LoaderCallbacks<Cursor>{
@@ -121,6 +119,7 @@ public class GalleryView extends RecyclerView{
                     }while (data.moveToNext());
                 }
             }
+            adapter.notifyDataSetChanged();
         }
 
         /**
@@ -129,7 +128,7 @@ public class GalleryView extends RecyclerView{
          */
         @Override
         public void onLoaderReset(Loader<Cursor> loader) {
-
+            adapter.resetAdapter();
         }
     }
 
@@ -158,12 +157,16 @@ public class GalleryView extends RecyclerView{
         }
     }
 
-    private class Adapter extends NarRecyclerViewAdapter<Image>{
+    private NarRecyclerViewAdapter<Image> adapter = new NarRecyclerViewAdapter<Image>(mImages, R.layout.cell_galley) {
         @Override
         public void bindView(NarViewHolder viewHolder, Image image) {
-
+            Glide.with(getContext())
+                    .load(image.path)
+                    .diskCacheStrategy(DiskCacheStrategy.NONE)
+                    .centerCrop()
+                    .into(viewHolder.getImageView(R.id.im_image));
         }
-    }
+    };
 
     /**
      * 对外的一个监听器
