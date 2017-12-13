@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="choose_type" format="enum">
+        <enum name="single_choose_pic" value="1" />
+        <enum name="multiple_choose_pic" value="2" />
+    </attr>
+
+    <declare-styleable name="GalleryView">
+        <attr name="choose_type"/>
+    </declare-styleable>
+
+</resources>

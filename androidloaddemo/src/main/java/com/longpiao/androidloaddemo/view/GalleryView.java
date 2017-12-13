@@ -1,6 +1,7 @@
 package com.longpiao.androidloaddemo.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -11,6 +12,7 @@ import android.support.v4.content.Loader;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.view.View;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -32,6 +34,7 @@ public class GalleryView extends RecyclerView{
 
     private LoaderCallback mLoaderCallback = new LoaderCallback();
     private SelectedChangeListener mListener;
+    private int chooseType = 1;  //1是单选 2是复选
 
     private List<Image> mImages = new ArrayList<>();
 
@@ -46,11 +49,25 @@ public class GalleryView extends RecyclerView{
     public GalleryView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context);
+        TypedArray array = context.obtainStyledAttributes(attrs, R.styleable.GalleryView);
+        chooseType = array.getInt(R.styleable.GalleryView_choose_type, 1);
+        array.recycle();
     }
 
     private void init(Context context){
+
         setLayoutManager(new GridLayoutManager(context, 4));
         setAdapter(adapter);
+        adapter.setOnItemClickListener(new NarRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(NarRecyclerViewAdapter adapter, View view, int position) {
+                if(chooseType == 1){
+
+                }else if (chooseType == 2){
+
+                }
+            }
+        });
     }
 
     public void setUp(LoaderManager loaderManager, SelectedChangeListener listener){
@@ -165,6 +182,8 @@ public class GalleryView extends RecyclerView{
                     .diskCacheStrategy(DiskCacheStrategy.NONE)
                     .centerCrop()
                     .into(viewHolder.getImageView(R.id.im_image));
+
+            viewHolder.getView(R.id.view_shade).setVisibility(image.isSelect?VISIBLE:INVISIBLE);
         }
     };
 

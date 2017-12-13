@@ -21,6 +21,16 @@ public class NarViewHolder extends RecyclerView.ViewHolder {
     public NarViewHolder(View itemView) {
         super(itemView);
         mViews = new SparseArray<>();
+
+        //设置onItemClick
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mAdapter.mClickListener != null){
+                    mAdapter.mClickListener.onItemClick(mAdapter, v, getLayoutPosition());
+                }
+            }
+        });
     }
 
     public NarViewHolder setTextView(@IdRes int idRes, String msg){
