@@ -1,1 +1,1 @@
-include ':app', ':dagger2demo', ':mvpdemo', ':util'
+include ':app', ':dagger2demo', ':mvpdemo', ':net'
