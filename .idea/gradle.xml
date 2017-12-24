@@ -3,6 +3,7 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+<<<<<<< HEAD
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="modules">
@@ -12,6 +13,19 @@
             <option value="$PROJECT_DIR$/dagger2demo" />
             <option value="$PROJECT_DIR$/mvpdemo" />
             <option value="$PROJECT_DIR$/net" />
+=======
+        <option name="distributionType" value="LOCAL" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="$APPLICATION_HOME_DIR$/gradle/gradle-4.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/androidloaddemo" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/dagger2demo" />
+            <option value="$PROJECT_DIR$/mvpdemo" />
+            <option value="$PROJECT_DIR$/util" />
+>>>>>>> d51226d93534baec3e03867615843c4396f6cff5
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
