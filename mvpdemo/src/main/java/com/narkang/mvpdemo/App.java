@@ -10,7 +10,7 @@ import com.narkang.util.app.AppConstant;
 
 public class App extends Application{
 
-    String HOST = "http://news-at.zhihu.com/api/4/";  //自己公司的域名地址
+    String HOST = "http://news-at.zhihu.com/api/4/";  //自己公司的域名地址1
 
     @Override
     public void onCreate() {
