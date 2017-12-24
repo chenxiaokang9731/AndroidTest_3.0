@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-include ':app', ':dagger2demo', ':mvpdemo', ':net'
-=======
-include ':app', ':dagger2demo', ':mvpdemo', ':util', ':androidloaddemo'
->>>>>>> d51226d93534baec3e03867615843c4396f6cff5
+include ':app', ':dagger2demo', ':mvpdemo', ':net', ':androidloaddemo'
